@@ -11,7 +11,7 @@
 </head>
 
 <body class="nes-pointer arcade">
-    <div class="overlay ">
+    <div class="overlay disable">
 
     </div>
     <article class="nes-container with-title is-centered is-dark">
@@ -20,7 +20,7 @@
     </article>
 
 
-    <article class="menu ">
+    <article class="menu disable">
         <button type="button" class="nes-btn is-warning">Jouer</button>
         <button type="button" class="nes-btn is-warning">Scores</button>
         <button type="button" class="nes-btn is-warning">Crédits</button>
@@ -85,7 +85,7 @@
     </article>
 
 
-    <main class="disable">
+    <main class="game">
         <article class="history">
             <!-- <img src="img/barzork_bourrin.png" alt="" class="dead-enemy"> -->
 
@@ -113,11 +113,11 @@
             <article>
                 <button type="button" class="nes-btn is-warning enemies-generator ">Genere un adversaire</button>
             </article>
-            <article class="disable">
+            <article class="ennemy-appear disable">
                 <h2 class="enemy-title"></h2>
                 <img src="" alt="" class="enemy-pp">
             </article>
-            <article class="life-bar disable">
+            <article class="ennemy-appear life-bar disable">
                 <label for="enemy-bar">Point de vie</label>
                 <progress class="nes-progress is-success" id="enemy-bar" max="100" value="70"><p>70%</p>  </progress>
             </article>

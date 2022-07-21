@@ -2,15 +2,15 @@ import { changeMessageStatus, randomNumber, generateEnemy } from "./generate.js"
 
 class Entity {
     constructor(name, life, att, def, imgPath, nameSelector) {
-        this.name = name;
-        this.life = life;
-        this.att = att;
-        this.def = def;
-        this.imgPath = imgPath;
-        this.nameSelector = nameSelector;
-        this.maxLife = this.life;
-    }
-    //Permet de changer le nom dans le DOM
+            this.name = name;
+            this.life = life;
+            this.att = att;
+            this.def = def;
+            this.imgPath = imgPath;
+            this.nameSelector = nameSelector;
+            this.maxLife = this.life;
+        }
+        //Permet de changer le nom dans le DOM
     setName() {
         let title = document.querySelector(this.nameSelector);
         title.textContent = this.name;
@@ -46,23 +46,23 @@ class Entity {
     }
 
     changeLifeStatus() {
-        if (this.life < 40) {
-            this.lifeBar.classList.add("is-error")
-            this.lifeBar.classList.remove("is-success")
-            this.lifeBar.classList.remove("is-warning")
+            if (this.life < 40) {
+                this.lifeBar.classList.add("is-error")
+                this.lifeBar.classList.remove("is-success")
+                this.lifeBar.classList.remove("is-warning")
 
-        } else if (this.life < 70) {
-            this.lifeBar.classList.add("is-warning")
-            this.lifeBar.classList.remove("is-success")
-            this.lifeBar.classList.remove("is-error")
-        } else {
-            this.lifeBar.classList.add("is-success")
-            this.lifeBar.classList.remove("is-error")
-            this.lifeBar.classList.remove("is-warning")
+            } else if (this.life < 70) {
+                this.lifeBar.classList.add("is-warning")
+                this.lifeBar.classList.remove("is-success")
+                this.lifeBar.classList.remove("is-error")
+            } else {
+                this.lifeBar.classList.add("is-success")
+                this.lifeBar.classList.remove("is-error")
+                this.lifeBar.classList.remove("is-warning")
+            }
+            this.lifeBar.setAttribute("value", this.life);
         }
-        this.lifeBar.setAttribute("value", this.life);
-    }
-    //Permet de changer la profile pic dans le DOM
+        //Permet de changer la profile pic dans le DOM
     setPp() {
         let pp = document.querySelector(".enemy-pp");
         console.log(`set PP ${pp} ${this.imgPath}`);
@@ -75,7 +75,7 @@ class Entity {
         this.setPp();
     }
 
- 
+
 }
 
 class Enemy extends Entity {
@@ -99,7 +99,7 @@ class Enemy extends Entity {
     displayEnemy() {
         //Selecteur
         let generateButton = document.querySelector(".enemies-generator");
-        let allArticles = document.querySelectorAll("article");
+        let ennemyappear = document.querySelectorAll(".ennemy-appear");
         //1
         console.log(generateButton.classList)
         if (!generateButton.classList.contains("disable")) {
@@ -114,8 +114,8 @@ class Enemy extends Entity {
             console.log(e);
         }
         //3
-        allArticles.forEach(function (article) {
-            article.classList.remove("disable");
+        ennemyappear.forEach(function(ennemyappear) {
+            ennemyappear.classList.remove("disable");
         });
     }
 
@@ -129,59 +129,58 @@ class Enemy extends Entity {
             changeMessageStatus(`${this.name} est mort, du renfort arrive !`);
             this.life = 0;
             return true;
-        }
-        else {
-            return false;
-        }
-    }
- 
-
-}
-class Allies extends Entity {
-    constructor(name, life, att, def, nameSelector) {
-        super(name, life, att, def, nameSelector)
-        this.lifeBar = document.querySelector("#allies-bar");
-        this.status = 0;
-        this.nameSelector = ".allies-pp"
-    }
-    /**
- * TODO: Méthode qui vérifie le status actuel  mort - vivant
- * * 1 - Check la santé
- * * 2 - Si >= 0 alors appel de la méthode Remove ennemie
- */
-    isDead() {
-        if (this.life <= 0) {
-            changeMessageStatus(`${this.name} est mort, la partie est terminer!`)
-            this.life = 0;
-            return true;
         } else {
             return false;
         }
     }
-    /**
-     * TODO: Méthode qui gere le special
-     * 
-     */
-    specialAttack(enemy) {
-        let specialAttack = this.att * 3;
-        if (this.life > 0) {
-            changeMessageStatus("Vous lancer une attaque venus des enfer");
-            enemy.life -= specialAttack;
 
+
+}
+class Allies extends Entity {
+    constructor(name, life, att, def, nameSelector) {
+            super(name, life, att, def, nameSelector)
+            this.lifeBar = document.querySelector("#allies-bar");
+            this.status = 0;
+            this.nameSelector = ".allies-pp"
         }
+        /**
+         * TODO: Méthode qui vérifie le status actuel  mort - vivant
+         * * 1 - Check la santé
+         * * 2 - Si >= 0 alors appel de la méthode Remove ennemie
+         */
+    isDead() {
+            if (this.life <= 0) {
+                changeMessageStatus(`${this.name} est mort, la partie est terminer!`)
+                this.life = 0;
+                return true;
+            } else {
+                return false;
+            }
+        }
+        /**
+         * TODO: Méthode qui gere le special
+         * 
+         */
+    specialAttack(enemy) {
+            let specialAttack = this.att * 3;
+            if (this.life > 0) {
+                changeMessageStatus("Vous lancer une attaque venus des enfer");
+                enemy.life -= specialAttack;
 
-        enemy.changeLifeStatus();
-        enemy.isDead();
-    }
-    /**
-     * TODO: Méthode qui rend entre 5 et 25 pourcent de vie lors d'une victoire
-     */
+            }
+
+            enemy.changeLifeStatus();
+            enemy.isDead();
+        }
+        /**
+         * TODO: Méthode qui rend entre 5 et 25 pourcent de vie lors d'une victoire
+         */
     healByVictory() {
         let rand = randomNumber();
         let message = "Grande victoire KROM est fier de vous gagnez";
         /**
-        * ! DEBUG
-        */
+         * ! DEBUG
+         */
         console.log("nombre tirer" + rand);
         console.log("avant soin" + this.life);
         //
@@ -190,16 +189,13 @@ class Allies extends Entity {
         if (rand < 10) {
             this.life = this.life + (this.maxLife * 25 / 100);
 
-        }
-        else if (rand < 20) {
+        } else if (rand < 20) {
             this.life = this.life + (this.maxLife * 20 / 100);
 
-        }
-        else if (rand < 30) {
+        } else if (rand < 30) {
             this.life = this.life + (this.maxLife * 15 / 100);
 
-        }
-        else if (rand < 40) {
+        } else if (rand < 40) {
             this.life = this.life + (this.maxLife * 10 / 100);
             message = "Cette victoire vous rend quelques point de vie";
         } else {
