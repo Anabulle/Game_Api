@@ -11,24 +11,80 @@
 </head>
 
 <body class="nes-pointer arcade">
-    <div class="overlay">
+    <div class="overlay ">
 
     </div>
     <article class="nes-container with-title is-centered is-dark">
         <p class="title">Status</p>
         <p class="status-bar">Bienvenue dans Fighting Surface</p>
     </article>
-    <article class="menu disable">
+
+
+    <article class="menu ">
         <button type="button" class="nes-btn is-warning">Jouer</button>
         <button type="button" class="nes-btn is-warning">Scores</button>
         <button type="button" class="nes-btn is-warning">Crédits</button>
     </article>
-    <article class="score">
-        <button type="button" class="nes-btn is-warning">Retour au menu</button>
+
+
+    <article class="score disable">
+        <form action="" method="post">
+            <div class="nes-container is-dark with-title">
+                <p class="title">votre score</p>
+                <p>1000</p>
+                <form action="" method="post">
+                    <label for="dark_field" style="color:#fff;">votre pseudo</label>
+                    <input type="text" id="dark_field" class="nes-input is-dark">
+                    <button type="button" class="nes-btn is-success">Envoie</button>
+                    <button type="button" class="nes-btn is-error">Quitter</button>
+                </form>
+
+            </div>
+
+        </form>
+        <div class="nes-table-responsive disable">
+            <table class="nes-table is-bordered is-dark">
+                <thead>
+                    <tr>
+                        <th>Pseudo</th>
+                        <th>Scores</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>michel</td>
+                        <td>3400</td>
+                    </tr>
+                    <tr>
+                        <td>michelle</td>
+                        <td>3440</td>
+                    </tr>
+                    <tr>
+                        <td>michelle</td>
+                        <td>3440</td>
+                    </tr>
+                    <tr>
+                        <td>michelle</td>
+                        <td>3440</td>
+                    </tr>
+                    <tr>
+                        <td>michelle</td>
+                        <td>3440</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="nes-btn is-warning">Retour au menu</button>
+        </div>
+
+
     </article>
+
+
     <article class="credit">
 
     </article>
+
+
     <main class="disable">
         <article class="history">
             <!-- <img src="img/barzork_bourrin.png" alt="" class="dead-enemy"> -->

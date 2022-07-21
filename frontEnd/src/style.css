@@ -11,7 +11,8 @@
 body {
     background-image: url("img/background_plaine.jpg");
     background-size: cover;
-    background-position: right 10% bottom 15%;
+    background-position: right 10% bottom 75%;
+    background-repeat: no-repeat;
 }
 
 main {
@@ -36,11 +37,41 @@ label {
     flex-direction: column;
     width: 300px;
     margin: auto;
-    padding-top: 150px;
 }
 
 .menu button {
+    margin-top: 50px;
+    top: 200px;
+}
+
+
+/* 
+* SCORES
+*/
+
+.score {
+    width: 300px;
+    margin: auto;
+    padding-top: 11%;
+}
+
+.score div {
+    margin-bottom: 10px;
+}
+
+.score tr,
+.score tr th,
+.score tr td {
+    padding: 15px;
+}
+
+.score form button,
+.score form input {
     margin-top: 20px;
+}
+
+.score .nes-container .title {
+    margin: -2rem 0 2rem 10rem;
 }
 
 
@@ -148,22 +179,18 @@ Framework modif
 .nes-container {
     position: absolute !important;
     width: 30vw;
-    top: 20%;
+    top: 10%;
     left: 35vw;
     word-wrap: anywhere;
 }
 
 .overlay {
     background-image: url("img/background_arcade.png");
-    background-size: cover;
+    background-size: 2900px 1550px;
     position: absolute;
     width: 100%;
     height: 100%;
-    background-position: right 10% bottom 5%;
-}
-
-.arcade {
-    background-position: right 10% top 62%;
+    background-position: right 50% bottom 40%;
 }
 
 @media screen and (max-width: 1400px) {
@@ -185,5 +212,28 @@ Framework modif
     .overlay {
         background-size: 2400px 1050px;
         background-position: right 50% bottom 40%;
+    }
+    .menu {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        margin: auto;
+        padding-top: 150px;
+    }
+    .menu button {
+        margin-top: 20px;
+    }
+    .score {
+        width: 300px;
+        margin: auto;
+        padding-top: 170px;
+    }
+    .score div {
+        margin-bottom: 10px;
+    }
+    .score tr,
+    .score tr th,
+    .score tr td {
+        font-size: 0.8rem;
     }
 }
