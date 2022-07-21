@@ -11,7 +11,7 @@
 </head>
 
 <body class="nes-pointer arcade">
-    <div class="overlay disable">
+    <div class="overlay">
 
     </div>
     <article class="nes-container with-title is-centered is-dark">
@@ -20,18 +20,18 @@
     </article>
 
 
-    <article class="menu disable">
-        <button type="button" class="nes-btn is-warning">Jouer</button>
-        <button type="button" class="nes-btn is-warning">Scores</button>
-        <button type="button" class="nes-btn is-warning">Crédits</button>
+    <article class="menu ">
+        <button type="button" class="nes-btn is-warning play">Jouer</button>
+        <button type="button" class="nes-btn is-warning getscore">Scores</button>
+        <button type="button" class="nes-btn is-warning getcredit">Crédits</button>
     </article>
 
 
     <article class="score disable">
-        <form action="" method="post">
-            <div class="nes-container is-dark with-title">
-                <p class="title">votre score</p>
-                <p>1000</p>
+        <div class="nes-container is-dark with-title">
+            <p class="title">votre score</p>
+            <p>1000</p>
+            <form action="" method="post">
                 <form action="" method="post">
                     <label for="dark_field" style="color:#fff;">votre pseudo</label>
                     <input type="text" id="dark_field" class="nes-input is-dark">
@@ -39,7 +39,7 @@
                     <button type="button" class="nes-btn is-error">Quitter</button>
                 </form>
 
-            </div>
+        </div>
 
         </form>
         <div class="nes-table-responsive disable">
@@ -85,7 +85,7 @@
     </article>
 
 
-    <main class="game">
+    <main class="game disable">
         <article class="history">
             <!-- <img src="img/barzork_bourrin.png" alt="" class="dead-enemy"> -->
 

@@ -32,6 +32,12 @@ label {
 * MENU 
 */
 
+.arcade {
+    background-size: cover;
+    background-position: right 10% bottom 55%;
+    background-repeat: no-repeat;
+}
+
 .menu {
     display: flex;
     flex-direction: column;
