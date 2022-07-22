@@ -276,9 +276,25 @@ function changeColorSpecial() {
     }
 }
 /** 
- * TODO: Fonction pour le menu au clic du bouton
+ * TODO: Fonction pour le lancement du jeu avec de l'animation
  */
 let playbutton = document.querySelector(".play");
-/**
- * Mettre en place un pierre feuille sciseaux, 
- */
+let overlay = document.querySelector(".overlay");
+let game = document.querySelector(".game");
+let menu = document.querySelector(".menu");
+playbutton.addEventListener("click", () => {
+        overlay.classList.add("anim-zoomin");
+        menu.classList.add("fadeout");
+        setTimeout(function() {
+            menu.classList.add("disable");
+            menu.classList.remove("fadeout");
+        }, 1000);
+        setTimeout(function() {
+            game.classList.remove("disable");
+            game.classList.add("fadein");
+        }, 1500);
+        game.classList.remove("fadein");
+    })
+    /**
+     * Mettre en place un pierre feuille ciseaux, 
+     */
