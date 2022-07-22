@@ -34,11 +34,33 @@ let menu = document.querySelector(".menu");
 
 //Lancement du jeux
 
-
-/**
- * ! SUITE
- * TODO: Crée un menu en HTML/CSS contenant Jouer - Scores - Crédit et faite les TODO
+/** 
+ * TODO: Fonction pour le lancement du jeu avec de l'animation
  */
+
+playbutton.addEventListener("click", () => {
+        beginTheGame();
+        addEnnemy();
+        overlay.classList.add("anim-zoomin");
+        menu.classList.add("fadeout");
+        setTimeout(function() {
+            menu.classList.add("disable");
+            menu.classList.remove("fadeout");
+        }, 1000);
+
+        setTimeout(function() {
+            game.classList.remove("disable");
+            game.classList.add("fadein");
+        }, 1500);
+        setTimeout(function() {
+            game.classList.remove("fadein");
+        }, 2000);
+
+    })
+    /**
+     * ! SUITE
+     * TODO: Crée un menu en HTML/CSS contenant Jouer - Scores - Crédit et faite les TODO
+     */
 
 /**
  * ! SUITE
@@ -175,20 +197,16 @@ function beginTheGame() {
  */
 function removeOrAddAttack(action = "", special = false) {
     if (action === "add") {
-        console.log("add attack");
         attackBtn.classList.add("is-error");
         attackBtn.classList.remove("is-disabled");
     } else {
-        console.log("remove attack");
         attackBtn.classList.remove("is-error");
         attackBtn.classList.add("is-disabled");
     }
     if (special === true) {
-        console.log("add special");
         specialBtn.classList.add("is-primary");
         specialBtn.classList.remove("is-disabled");
     } else {
-        console.log("remove special");
         specialBtn.classList.remove("is-primary");
         specialBtn.classList.add("is-disabled");
     }
@@ -278,29 +296,7 @@ function changeColorSpecial() {
 
     }
 }
-/** 
- * TODO: Fonction pour le lancement du jeu avec de l'animation
+
+/**
+ * Mettre en place un pierre feuille ciseaux, 
  */
-
-playbutton.addEventListener("click", () => {
-        addEnnemy();
-        beginTheGame();
-        overlay.classList.add("anim-zoomin");
-        menu.classList.add("fadeout");
-        setTimeout(function() {
-            menu.classList.add("disable");
-            menu.classList.remove("fadeout");
-        }, 1000);
-
-        setTimeout(function() {
-            game.classList.remove("disable");
-            game.classList.add("fadein");
-        }, 1500);
-        setTimeout(function() {
-            game.classList.remove("fadein");
-        }, 2000);
-
-    })
-    /**
-     * Mettre en place un pierre feuille ciseaux, 
-     */

@@ -34,7 +34,8 @@ class Entity {
 
             } else if (rand > 90) {
                 changeMessageStatus(this.name + " met un coup critique");
-                enemy.life -= (this.att * 1.5);
+                let dmg = (this.att * 1.5);
+                enemy.life -= dmg;
             } else {
                 changeMessageStatus(this.name + "Attaque (" + rand + ")");
                 enemy.life -= this.att;
