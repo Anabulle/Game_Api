@@ -19,15 +19,15 @@
     </article>
 
 
-    <article class="menu ">
+    <article class="menu">
         <button type="button" class="nes-btn is-warning play">Jouer</button>
         <button type="button" class="nes-btn is-warning getscore">Scores</button>
         <button type="button" class="nes-btn is-warning getcredit">Crédits</button>
     </article>
 
 
-    <article class="score disable">
-        <div class="nes-container is-dark with-title">
+    <article class="score">
+        <div class="nes-container is-dark with-title disable">
             <p class="title">votre score</p>
             <p>1000</p>
             <form action="" method="post">
@@ -41,7 +41,7 @@
         </div>
 
         </form>
-        <div class="nes-table-responsive disable">
+        <div class="nes-table-responsive score-table disable">
             <table class="nes-table is-bordered is-dark">
                 <thead>
                     <tr>
@@ -79,8 +79,28 @@
     </article>
 
 
-    <article class="credit">
-
+    <article class="credit disable">
+        <div class="nes-table-responsive credit-table">
+            <table class="nes-table is-bordered is-dark">
+                <thead>
+                    <tr>
+                        <th>Auteur</th>
+                        <th>Asset</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="#">James</a></td>
+                        <td>Le grincheux</td>
+                    </tr>
+                    <tr>
+                        <td><a href="#">Bill</a></td>
+                        <td>Le grincheux</td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" class="nes-btn is-warning">Retour au menu</button>
+        </div>
     </article>
 
 
@@ -125,4 +145,4 @@
     <script type="module" src="main.js"></script>
 </body>
 
-</html>
+</html
