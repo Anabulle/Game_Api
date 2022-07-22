@@ -241,10 +241,27 @@ Framework modif
     animation-fill-mode: forwards;
 }
 
+.damage {
+    animation: damage;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
+}
+
 
 /*
 *Animations
 */
+
+@keyframes damage {
+    from {
+        margin-top: 0%;
+        opacity: 100%;
+    }
+    to {
+        margin-top: -200px;
+        opacity: 0%;
+    }
+}
 
 @keyframes zoom-in {
     0% {

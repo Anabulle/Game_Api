@@ -4,7 +4,9 @@ import {
     generateEnemy,
     changeMessageStatus,
     isItNullOrUndefined,
-    addMonsterInDeadZone
+    addMonsterInDeadZone,
+    changeDmgAllies,
+    changeDmgEnemy,
 } from "./generate.js";
 import { enemiesList } from "./data.js";
 

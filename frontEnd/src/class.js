@@ -1,4 +1,4 @@
-import { changeMessageStatus, randomNumber, generateEnemy } from "./generate.js";
+import { changeMessageStatus, randomNumber, generateEnemy, changeDmgAllies, changeDmgEnemy } from "./generate.js";
 
 class Entity {
     constructor(name, life, att, def, imgPath, nameSelector) {
@@ -34,11 +34,22 @@ class Entity {
 
             } else if (rand > 90) {
                 changeMessageStatus(this.name + " met un coup critique");
-                let dmg = (this.att * 1.5);
-                enemy.life -= dmg;
+                let dmg = enemy.life -= (this.att * 1.5);
+                if (this.name === "Jeanjean") {
+                    changeDmgEnemy(dmg);
+                } else {
+                    changeDmgAllies(dmg);
+                }
+
+
             } else {
                 changeMessageStatus(this.name + "Attaque (" + rand + ")");
-                enemy.life -= this.att;
+                let dmg = enemy.life -= (this.att * 1.5);
+                if (this.name === "Jeanjean") {
+                    changeDmgEnemy(dmg);
+                } else {
+                    changeDmgAllies(dmg);
+                }
             }
         }
 
@@ -167,6 +178,7 @@ class Allies extends Entity {
             if (this.life > 0) {
                 changeMessageStatus("Vous lancer une attaque venus des enfer");
                 enemy.life -= specialAttack;
+                changeDmgEnemy(specialAttack);
 
             }
 
