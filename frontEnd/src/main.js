@@ -142,7 +142,7 @@ specialBtn.addEventListener("click", function() {
 /**
  * TODO: Evènement qui ajoute un enemy et lance une manche 
  */
-newEnemy.addEventListener("click", function() {
+function addEnnemy() {
     try {
         //1
         actualEnemy = generateEnemy(enemiesList);
@@ -153,7 +153,7 @@ newEnemy.addEventListener("click", function() {
         console.error(`Une erreur est survenue ${error}`);
         console.log(error);
     }
-});
+};
 
 /**
  * TODO : Instanciation du héros, ICI démarre le JEUX 
@@ -283,15 +283,19 @@ let overlay = document.querySelector(".overlay");
 let game = document.querySelector(".game");
 let menu = document.querySelector(".menu");
 playbutton.addEventListener("click", () => {
+        addEnnemy();
         overlay.classList.add("anim-zoomin");
         menu.classList.add("fadeout");
         setTimeout(function() {
             menu.classList.add("disable");
             menu.classList.remove("fadeout");
         }, 1000);
+
         setTimeout(function() {
+
             game.classList.remove("disable");
             game.classList.add("fadein");
+
         }, 1500);
         game.classList.remove("fadein");
     })
