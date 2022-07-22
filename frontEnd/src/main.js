@@ -27,9 +27,13 @@ let newEnemy = document.querySelector(".enemies-generator");
 let arrowSelector = document.querySelector(".turn-arrow > img");
 let attackBtn = document.querySelector(".attack-js");
 let specialBtn = document.querySelector(".special-js");
+let playbutton = document.querySelector(".play");
+let overlay = document.querySelector(".overlay");
+let game = document.querySelector(".game");
+let menu = document.querySelector(".menu");
 
 //Lancement du jeux
-beginTheGame();
+
 
 /**
  * ! SUITE
@@ -98,8 +102,7 @@ attackBtn.addEventListener("click", function() {
         }, 2000);
 
     } else {
-        console.log("vous ne pouvez pas attaquer")
-
+        console.log("finito");
     }
 });
 
@@ -233,13 +236,13 @@ function newRound() {
     let rand = randomNumber();
     rand = 49;
     if (rand <= 50) {
-        changeMessageStatus("c'est vous qui commencer");
+        changeMessageStatus("c'est vous qui commencez");
         changeArrowDirection("allies");
         //Changin color of btn
         changeColorSpecial();
 
     } else {
-        changeMessageStatus("c'est l'ennemis qui commence");
+        changeMessageStatus("c'est l'ennemi qui commence");
         changeArrowDirection();
         setTimeout(function() {
             actualEnemy.attack(hero);
@@ -278,12 +281,10 @@ function changeColorSpecial() {
 /** 
  * TODO: Fonction pour le lancement du jeu avec de l'animation
  */
-let playbutton = document.querySelector(".play");
-let overlay = document.querySelector(".overlay");
-let game = document.querySelector(".game");
-let menu = document.querySelector(".menu");
+
 playbutton.addEventListener("click", () => {
         addEnnemy();
+        beginTheGame();
         overlay.classList.add("anim-zoomin");
         menu.classList.add("fadeout");
         setTimeout(function() {
@@ -292,12 +293,13 @@ playbutton.addEventListener("click", () => {
         }, 1000);
 
         setTimeout(function() {
-
             game.classList.remove("disable");
             game.classList.add("fadein");
-
         }, 1500);
-        game.classList.remove("fadein");
+        setTimeout(function() {
+            game.classList.remove("fadein");
+        }, 2000);
+
     })
     /**
      * Mettre en place un pierre feuille ciseaux, 
