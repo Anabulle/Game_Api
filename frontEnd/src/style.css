@@ -254,10 +254,38 @@ Framework modif
     animation-fill-mode: forwards;
 }
 
+.att-ally {
+    animation: att-ally;
+    animation-duration: .1s;
+}
+
+.att-enemy {
+    animation: att-enemy;
+    animation-duration: .1s;
+}
+
 
 /*
 *Animations
 */
+
+@keyframes att-ally {
+    from {
+        transform: translate(0px);
+    }
+    to {
+        transform: translate(30px);
+    }
+}
+
+@keyframes att-enemy {
+    from {
+        transform: translate(0px);
+    }
+    to {
+        transform: translate(-30px);
+    }
+}
 
 @keyframes damage {
     from {

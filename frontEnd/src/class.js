@@ -1,4 +1,4 @@
-import { changeMessageStatus, randomNumber, generateEnemy, changeDmgAllies, changeDmgEnemy } from "./generate.js";
+import { changeMessageStatus, randomNumber, generateEnemy, changeDmgAllies, changeDmgEnemy, animAttackHero, animAttackEnemy } from "./generate.js";
 
 class Entity {
     constructor(name, life, att, def, imgPath, nameSelector) {
@@ -33,8 +33,10 @@ class Entity {
                 changeMessageStatus(this.name + " rate son attaque");
                 if (this.name === "Jeanjean") {
                     changeDmgEnemy("miss");
+                    animAttackHero();
                 } else {
                     changeDmgAllies("miss");
+                    animAttackEnemy();
                 }
 
 
@@ -44,8 +46,10 @@ class Entity {
                 enemy.life -= dmg;
                 if (this.name === "Jeanjean") {
                     changeDmgEnemy(dmg);
+                    animAttackHero();
                 } else {
                     changeDmgAllies(dmg);
+                    animAttackEnemy();
                 }
 
 
@@ -55,8 +59,10 @@ class Entity {
                 enemy.life -= dmg;
                 if (this.name === "Jeanjean") {
                     changeDmgEnemy(dmg);
+                    animAttackHero();
                 } else {
                     changeDmgAllies(dmg);
+                    animAttackEnemy();
                 }
             }
         }

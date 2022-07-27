@@ -80,10 +80,18 @@ function changeDmgEnemy(damage) {
  */
 function animAttackHero() {
     let atk = document.querySelector(".anim-atk-hero");
+    atk.classList.add("att-ally");
+    setTimeout(function() {
+        atk.classList.remove("att-ally");
+    }, 2000);
 }
 
 function animAttackEnemy() {
     let atk = document.querySelector(".anim-atk-enemy");
+    atk.classList.add("att-enemy");
+    setTimeout(function() {
+        damageEnemy.classList.remove("att-enemy");
+    }, 2000);
 }
 /**
  * TODO: fonction qui verifie si une variable est null ou undefined
@@ -107,4 +115,4 @@ function addMonsterInDeadZone(monster) {
     newImg.classList.add("dead-enemy");
     deadZone.append(newImg);
 }
-export { randomNumber, generateEnemy, changeMessageStatus, isItNullOrUndefined, addMonsterInDeadZone, changeDmgAllies, changeDmgEnemy };
+export { randomNumber, generateEnemy, changeMessageStatus, isItNullOrUndefined, addMonsterInDeadZone, changeDmgAllies, changeDmgEnemy, animAttackHero, animAttackEnemy };
