@@ -264,10 +264,30 @@ Framework modif
     animation-duration: .1s;
 }
 
+.spe {
+    animation: special;
+    animation-duration: .5s;
+}
+
 
 /*
 *Animations
 */
+
+@keyframes special {
+    0% {
+        opacity: 100%;
+    }
+    25% {
+        opacity: 0%;
+    }
+    75% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
 
 @keyframes att-ally {
     from {

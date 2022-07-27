@@ -58,7 +58,7 @@ function changeMessageStatus(message = "Bienvenue dans ce jeux de fou") {
 
 function changeDmgAllies(damage) {
     let damageHero = document.querySelector(".damage-hero");
-    damageHero.textContent = damage;
+    damageHero.textContent = "-" + damage;
     damageHero.classList.add("damage");
     setTimeout(function() {
         damageHero.classList.remove("damage");
@@ -68,7 +68,7 @@ function changeDmgAllies(damage) {
 
 function changeDmgEnemy(damage) {
     let damageEnemy = document.querySelector(".damage-enemy");
-    damageEnemy.textContent = damage;
+    damageEnemy.textContent = "-" + damage;
     damageEnemy.classList.add("damage");
     setTimeout(function() {
         damageEnemy.classList.remove("damage");
@@ -90,7 +90,15 @@ function animAttackEnemy() {
     let atk = document.querySelector(".anim-atk-enemy");
     atk.classList.add("att-enemy");
     setTimeout(function() {
-        damageEnemy.classList.remove("att-enemy");
+        atk.classList.remove("att-enemy");
+    }, 2000);
+}
+
+function dmgSpecial() {
+    let atk = document.querySelector(".anim-atk-enemy");
+    atk.classList.add("spe");
+    setTimeout(function() {
+        atk.classList.remove("spe");
     }, 2000);
 }
 /**
@@ -115,4 +123,12 @@ function addMonsterInDeadZone(monster) {
     newImg.classList.add("dead-enemy");
     deadZone.append(newImg);
 }
-export { randomNumber, generateEnemy, changeMessageStatus, isItNullOrUndefined, addMonsterInDeadZone, changeDmgAllies, changeDmgEnemy, animAttackHero, animAttackEnemy };
+
+function removeDeadZone() {
+    let deadZoneImg = document.querySelectorAll(".dead_enemy");
+    deadZoneImg.forEach(element => {
+        element.remove();
+    });
+
+}
+export { randomNumber, generateEnemy, changeMessageStatus, isItNullOrUndefined, addMonsterInDeadZone, changeDmgAllies, changeDmgEnemy, animAttackHero, animAttackEnemy, dmgSpecial, removeDeadZone };

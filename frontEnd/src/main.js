@@ -59,20 +59,9 @@ playbutton.addEventListener("click", () => {
     })
     /**
      * ! SUITE
-     * TODO: Crée un menu en HTML/CSS contenant Jouer - Scores - Crédit et faite les TODO
+     * TODO: Evenement pour gerer le bouton highscore du menu
+     * * 1 - Fait disparaitre le menu et apparaitre le tableau
      */
-
-/**
- * ! SUITE
- * TODO: Evenement pour gerer le bouton play du menu
- * * 1 - Fait disparaitre le menu et apparaitre le jeux
- */
-
-/**
- * ! SUITE
- * TODO: Evenement pour gerer le bouton highscore du menu
- * * 1 - Fait disparaitre le menu et apparaitre le tableau
- */
 
 /**
  * ! SUITE

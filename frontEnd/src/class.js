@@ -1,4 +1,4 @@
-import { changeMessageStatus, randomNumber, generateEnemy, changeDmgAllies, changeDmgEnemy, animAttackHero, animAttackEnemy } from "./generate.js";
+import { changeMessageStatus, randomNumber, generateEnemy, changeDmgAllies, changeDmgEnemy, animAttackHero, animAttackEnemy, dmgSpecial } from "./generate.js";
 
 class Entity {
     constructor(name, life, att, def, imgPath, nameSelector) {
@@ -176,7 +176,7 @@ class Allies extends Entity {
          */
     isDead() {
             if (this.life <= 0) {
-                changeMessageStatus(`${this.name} est mort, la partie est terminer!`)
+                changeMessageStatus(`${this.name} est mort, la partie est terminée!`)
                 this.life = 0;
                 return true;
             } else {
@@ -193,6 +193,7 @@ class Allies extends Entity {
                 changeMessageStatus("Vous lancer une attaque venus des enfer");
                 enemy.life -= specialAttack;
                 changeDmgEnemy(specialAttack);
+                dmgSpecial();
 
             }
 
