@@ -185,6 +185,13 @@ history
     filter: sepia(100%)
 }
 
+.damage-hero,
+.damage-enemy {
+    text-align: center;
+    color: crimson;
+    font-size: 1.5rem;
+}
+
 
 /*
 Framework modif
@@ -243,7 +250,7 @@ Framework modif
 
 .damage {
     animation: damage;
-    animation-duration: 1.5s;
+    animation-duration: 1.8s;
     animation-fill-mode: forwards;
 }
 
@@ -315,19 +322,13 @@ Framework modif
         top: 5%;
         left: 27.5vw;
     }
+    .menu button {
+        margin-top: 40px;
+        top: 130px;
+    }
     .overlay {
         background-size: 2400px 1050px;
         background-position: right 50% bottom 40%;
-    }
-    .menu {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-        margin: auto;
-        padding-top: 150px;
-    }
-    .menu button {
-        margin-top: 20px;
     }
     .score {
         width: 300px;

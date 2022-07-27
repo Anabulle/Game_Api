@@ -31,10 +31,17 @@ class Entity {
         if (this.life > 0) {
             if (rand < 10) {
                 changeMessageStatus(this.name + " rate son attaque");
+                if (this.name === "Jeanjean") {
+                    changeDmgEnemy("miss");
+                } else {
+                    changeDmgAllies("miss");
+                }
+
 
             } else if (rand > 90) {
                 changeMessageStatus(this.name + " met un coup critique");
-                let dmg = enemy.life -= (this.att * 1.5);
+                let dmg = (this.att * 1.5);
+                enemy.life -= dmg;
                 if (this.name === "Jeanjean") {
                     changeDmgEnemy(dmg);
                 } else {
@@ -44,7 +51,8 @@ class Entity {
 
             } else {
                 changeMessageStatus(this.name + "Attaque (" + rand + ")");
-                let dmg = enemy.life -= (this.att * 1.5);
+                let dmg = (this.att * 1.5);
+                enemy.life -= dmg;
                 if (this.name === "Jeanjean") {
                     changeDmgEnemy(dmg);
                 } else {

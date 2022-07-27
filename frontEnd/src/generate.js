@@ -76,6 +76,16 @@ function changeDmgEnemy(damage) {
     }, 2000);
 }
 /**
+ * TODO: anim attaque
+ */
+function animAttackHero() {
+    let atk = document.querySelector(".anim-atk-hero");
+}
+
+function animAttackEnemy() {
+    let atk = document.querySelector(".anim-atk-enemy");
+}
+/**
  * TODO: fonction qui verifie si une variable est null ou undefined
  */
 function isItNullOrUndefined(toCheck) {
